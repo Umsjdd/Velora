@@ -7,7 +7,7 @@
     "dev": "concurrently \"npm run server\" \"npm run dashboard\"",
     "server": "nodemon server/index.js",
     "dashboard": "cd dashboard && npx vite",
-    "build": "npm install && cd dashboard && npm install && npm run build && cd .. && npx prisma generate && npx prisma db push",
+    "build": "npm install && cd dashboard && npm install && npm run build && cd .. && sh scripts/setup-db.sh",
     "start": "NODE_ENV=production PORT=3000 node server/index.js",
     "db:push": "npx prisma db push",
     "db:generate": "npx prisma generate",

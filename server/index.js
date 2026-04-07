@@ -1,6 +1,12 @@
 import dotenv from 'dotenv';
 dotenv.config();
 
+// Build DATABASE_URL from Replit PG* vars if not already set
+if (!process.env.DATABASE_URL && process.env.PGHOST) {
+  const { PGUSER, PGPASSWORD, PGHOST, PGPORT, PGDATABASE } = process.env;
+  process.env.DATABASE_URL = `postgresql://${PGUSER}:${PGPASSWORD}@${PGHOST}:${PGPORT}/${PGDATABASE}`;
+}
+
 import express from 'express';
 import cors from 'cors';
 import { PrismaClient } from '@prisma/client';
