@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vestora — Your Entire Digital Infrastructure. Simplified.</title>
+    <meta name="description" content="Servers, email, storage, domains, analytics, and billing — unified in one premium platform. No complexity. No compromise.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%234a6cf7'/><text x='16' y='22' text-anchor='middle' fill='white' font-size='18' font-weight='bold' font-family='Inter,sans-serif'>V</text></svg>">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="32" height="32" rx="8" fill="url(#logo-grad)"/>
+                        <path d="M10 10L16 22L22 10" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <defs>
+                            <linearGradient id="logo-grad" x1="0" y1="0" x2="32" y2="32">
+                                <stop stop-color="#4a6cf7"/>
+                                <stop offset="1" stop-color="#7c5cf7"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                Vestora
+            </a>
+            <div class="nav-links" id="nav-links">
+                <a href="#product">Product</a>
+                <a href="#features">Features</a>
+                <a href="#use-cases">Use Cases</a>
+                <a href="#pricing">Pricing</a>
+            </div>
+            <div class="nav-actions">
+                <a href="#" class="btn-text">Sign In</a>
+                <a href="#" class="btn-primary btn-sm">Get Started</a>
+            </div>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="#product">Product</a>
+        <a href="#features">Features</a>
+        <a href="#use-cases">Use Cases</a>
+        <a href="#pricing">Pricing</a>
+        <div class="mobile-menu-actions">
+            <a href="#" class="btn-text">Sign In</a>
+            <a href="#" class="btn-primary">Get Started</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg">
+            <div class="hero-glow hero-glow-1"></div>
+            <div class="hero-glow hero-glow-2"></div>
+            <div class="hero-glow hero-glow-3"></div>
+            <div class="hero-grid"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content reveal">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    The all-in-one infrastructure platform
+                </div>
+                <h1>Your Entire Digital<br>Infrastructure. <span class="gradient-text">Simplified.</span></h1>
+                <p class="hero-sub">Servers, email, storage, domains, analytics, and billing — unified in one premium platform. No complexity. No compromise.</p>
+                <div class="hero-cta">
+                    <a href="#pricing" class="btn-primary btn-lg">
+                        Get Started
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                    </a>
+                    <a href="#product" class="btn-outline btn-lg">See How It Works</a>
+                </div>
+            </div>
+            <div class="hero-stats reveal reveal-delay-1">
+                <div class="stat">
+                    <span class="stat-value">99.99%</span>
+                    <span class="stat-label">Uptime SLA</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-value">42</span>
+                    <span class="stat-label">Global Edge Locations</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-value">&lt;50ms</span>
+                    <span class="stat-label">Avg Response Time</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Bar -->
+    <section class="trust-bar">
+        <div class="container">
+            <p class="trust-label reveal">Trusted by forward-thinking teams worldwide</p>
+            <div class="trust-logos reveal reveal-delay-1">
+                <div class="trust-logo">Meridian</div>
+                <div class="trust-logo">Arclight</div>
+                <div class="trust-logo">Onward</div>
+                <div class="trust-logo">Helix</div>
+                <div class="trust-logo">Prism</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Overview -->
+    <section class="section product" id="product">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Product</span>
+                <h2>One platform.<br>Everything you need.</h2>
+                <p class="section-sub">Stop juggling eight different tools. Vestora brings your entire digital infrastructure under one roof — managed, monitored, and optimised from a single dashboard.</p>
+            </div>
+
+            <div class="product-grid">
+                <!-- Infrastructure -->
+                <div class="product-category reveal">
+                    <h3 class="category-title">
+                        <span class="category-icon infrastructure">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><circle cx="6" cy="6" r="1" fill="currentColor" stroke="none"/><circle cx="6" cy="18" r="1" fill="currentColor" stroke="none"/></svg>
+                        </span>
+                        Infrastructure
+                    </h3>
+                    <div class="product-cards">
+                        <div class="product-card">
+                            <div class="card-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12H2"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg>
+                            </div>
+                            <h4>Server Hosting</h4>
+                            <p>Fast, scalable cloud servers with automatic load balancing and 99.99% uptime guarantee.</p>
+                        </div>
+                        <div class="product-card">
+                            <div class="card-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+                            </div>
+                            <h4>Database Hosting</h4>
+                            <p>Managed databases with automatic backups, point-in-time recovery, and enterprise-grade security.</p>
+                        </div>
+                        <div class="product-card">
+                            <div class="card-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+                            </div>
+                            <h4>Image & File Storage</h4>
+                            <p>Store and deliver images, videos, and documents with automatic compression and optimisation.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Delivery -->
+                <div class="product-category reveal reveal-delay-1">
+                    <h3 class="category-title">
+                        <span class="category-icon delivery">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                        </span>
+                        Delivery
+                    </h3>
+                    <div class="product-cards">
+                        <div class="product-card">
+                            <div class="card-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                            </div>
+                            <h4>CDN</h4>
+                            <p>Global content delivery network with intelligent caching, DDoS protection, and edge computing.</p>
+                        </div>
+                        <div class="product-card">
+                            <div class="card-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                            </div>
+                            <h4>Domains & DNS</h4>
+                            <p>Register domains, manage DNS records, and get automatic SSL certificates — all in one place.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Communication -->
+                <div class="product-category reveal reveal-delay-2">
+                    <h3 class="category-title">
+                        <span class="category-icon communication">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                        </span>
+                        Communication
+                    </h3>
+                    <div class="product-cards">
+                        <div class="product-card">
+                            <div class="card-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                            </div>
+                            <h4>Email Hosting</h4>
+                            <p>Professional business email with your domain. High deliverability, spam protection, and unlimited aliases.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Insights -->
+                <div class="product-category reveal reveal-delay-1">
+                    <h3 class="category-title">
+                        <span class="category-icon insights">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+                        </span>
+                        Insights
+                    </h3>
+                    <div class="product-cards">
+                        <div class="product-card">
+                            <div class="card-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><path d="M18 12a2 2 0 0 0 0 4h4v-4Z"/></svg>
+                            </div>
+                            <h4>Analytics Dashboard</h4>
+                            <p>Website traffic, email performance, and infrastructure metrics — all visualised in real time.</p>
+                        </div>
+                        <div class="product-card">
+                            <div class="card-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                            </div>
+                            <h4>Monitoring & Alerts</h4>
+                            <p>Uptime monitoring, performance tracking, and real-time notifications when something needs attention.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Business Tools -->
+                <div class="product-category reveal reveal-delay-2">
+                    <h3 class="category-title">
+                        <span class="category-icon business">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><path d="M1 10h22"/></svg>
+                        </span>
+                        Business Tools
+                    </h3>
+                    <div class="product-cards">
+                        <div class="product-card">
+                            <div class="card-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><path d="M1 10h22"/></svg>
+                            </div>
+                            <h4>Billing & Subscriptions</h4>
+                            <p>Built-in billing, subscription management, and payment integrations to monetise your services.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem & Solution -->
+    <section class="section problem-solution">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Why Vestora</span>
+                <h2>The cost of fragmentation.</h2>
+                <p class="section-sub">Most businesses run on a patchwork of disconnected tools. Different logins. Different dashboards. Different bills. Different support teams. It slows you down and creates gaps.</p>
+            </div>
+
+            <div class="ps-comparison">
+                <div class="ps-before reveal">
+                    <div class="ps-label ps-label-before">Before Vestora</div>
+                    <div class="ps-grid">
+                        <div class="ps-tool">Hosting Provider</div>
+                        <div class="ps-tool">Email Service</div>
+                        <div class="ps-tool">File Storage</div>
+                        <div class="ps-tool">DNS Manager</div>
+                        <div class="ps-tool">CDN Provider</div>
+                        <div class="ps-tool">Analytics Tool</div>
+                        <div class="ps-tool">Monitoring Service</div>
+                        <div class="ps-tool">Billing Platform</div>
+                    </div>
+                    <div class="ps-summary">
+                        <span class="ps-number">8</span> tools.
+                        <span class="ps-number">8</span> logins.
+                        <span class="ps-number">8</span> bills.
+                        <span class="ps-number">8</span> points of failure.
+                    </div>
+                </div>
+
+                <div class="ps-arrow reveal reveal-delay-1">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </div>
+
+                <div class="ps-after reveal reveal-delay-2">
+                    <div class="ps-label ps-label-after">With Vestora</div>
+                    <div class="ps-unified">
+                        <div class="ps-unified-icon">
+                            <svg viewBox="0 0 32 32" fill="none">
+                                <rect width="32" height="32" rx="8" fill="url(#ps-grad)"/>
+                                <path d="M10 10L16 22L22 10" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <defs><linearGradient id="ps-grad" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#4a6cf7"/><stop offset="1" stop-color="#7c5cf7"/></linearGradient></defs>
+                            </svg>
+                        </div>
+                        <h4>One Platform</h4>
+                        <p>Everything unified. One dashboard. One bill. Total control.</p>
+                    </div>
+                    <div class="ps-summary ps-summary-after">
+                        <span class="ps-number">1</span> platform.
+                        <span class="ps-number">1</span> login.
+                        <span class="ps-number">Complete</span> control.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="section features" id="features">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Features</span>
+                <h2>Built for performance.<br>Designed for clarity.</h2>
+                <p class="section-sub">Every feature exists because businesses asked for it. Nothing extra. Nothing missing.</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card reveal">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                    </div>
+                    <h4>Unified Dashboard</h4>
+                    <p>Servers, email, storage, domains, analytics — controlled from a single, beautifully designed interface.</p>
+                </div>
+                <div class="feature-card reveal reveal-delay-1">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="m10 17 5-5-5-5"/><path d="M15 12H3"/></svg>
+                    </div>
+                    <h4>One Login</h4>
+                    <p>Access everything with a single set of credentials. Team permissions and roles built in.</p>
+                </div>
+                <div class="feature-card reveal reveal-delay-2">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                    </div>
+                    <h4>High Performance</h4>
+                    <p>Enterprise-grade infrastructure with 99.99% uptime SLA and sub-50ms response times globally.</p>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h4>Secure by Default</h4>
+                    <p>Automatic SSL, DDoS protection, encrypted storage, and SOC 2 compliant infrastructure.</p>
+                </div>
+                <div class="feature-card reveal reveal-delay-1">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-6.219-8.56"/><polyline points="21 3 21 9 15 9"/></svg>
+                    </div>
+                    <h4>Auto-Scaling</h4>
+                    <p>Infrastructure that grows with your business. Handle traffic spikes without manual intervention.</p>
+                </div>
+                <div class="feature-card reveal reveal-delay-2">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    </div>
+                    <h4>Priority Support</h4>
+                    <p>Real humans. Fast responses. Dedicated account managers on Growth and Scale plans.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases -->
+    <section class="section use-cases" id="use-cases">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Use Cases</span>
+                <h2>Built for every business.</h2>
+                <p class="section-sub">Whether you're launching a brand or managing hundreds of clients, Vestora adapts to the way you work.</p>
+            </div>
+
+            <div class="use-cases-grid">
+                <div class="use-case-card reveal">
+                    <div class="use-case-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                    </div>
+                    <h4>E-Commerce Brands</h4>
+                    <p>Fast page loads, reliable email campaigns, secure payments, and real-time analytics. Everything an online store needs to convert and scale.</p>
+                    <ul class="use-case-features">
+                        <li>CDN-optimised product pages</li>
+                        <li>Transactional email delivery</li>
+                        <li>Real-time sales analytics</li>
+                    </ul>
+                </div>
+                <div class="use-case-card reveal reveal-delay-1">
+                    <div class="use-case-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    </div>
+                    <h4>Hospitality</h4>
+                    <p>Hotels, restaurants, and venues need reliable booking systems, fast websites, and professional communications.</p>
+                    <ul class="use-case-features">
+                        <li>High-uptime booking infrastructure</li>
+                        <li>Image-heavy content delivery</li>
+                        <li>Branded email communications</li>
+                    </ul>
+                </div>
+                <div class="use-case-card reveal reveal-delay-2">
+                    <div class="use-case-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <h4>Agencies</h4>
+                    <p>Manage multiple client projects from one dashboard. Separate environments, unified billing, and white-label options.</p>
+                    <ul class="use-case-features">
+                        <li>Multi-client management</li>
+                        <li>Isolated environments per client</li>
+                        <li>Consolidated billing</li>
+                    </ul>
+                </div>
+                <div class="use-case-card reveal reveal-delay-3">
+                    <div class="use-case-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <h4>Founders & Startups</h4>
+                    <p>Launch fast without stitching together a dozen services. Start lean, scale as you grow — without re-platforming.</p>
+                    <ul class="use-case-features">
+                        <li>Quick deployment</li>
+                        <li>Transparent, scalable pricing</li>
+                        <li>All essentials from day one</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="section pricing" id="pricing">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Pricing</span>
+                <h2>Simple, transparent pricing.</h2>
+                <p class="section-sub">No hidden fees. No surprise charges. Choose the plan that fits your business.</p>
+            </div>
+
+            <div class="pricing-toggle reveal">
+                <span class="toggle-label active" id="toggle-monthly">Monthly</span>
+                <button class="toggle-switch" id="pricing-toggle" aria-label="Toggle billing period">
+                    <span class="toggle-knob"></span>
+                </button>
+                <span class="toggle-label" id="toggle-annual">Annual <span class="toggle-save">Save 20%</span></span>
+            </div>
+
+            <div class="pricing-grid">
+                <div class="pricing-card reveal">
+                    <div class="pricing-header">
+                        <h4>Starter</h4>
+                        <p class="pricing-desc">For individuals and small projects</p>
+                        <div class="pricing-amount">
+                            <span class="price-currency">$</span>
+                            <span class="price-value" data-monthly="49" data-annual="39">49</span>
+                            <span class="price-period">/month</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>1 Cloud Server (2 vCPU, 4GB RAM)</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>5 Email Accounts</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>50GB Storage</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>1 Domain with SSL</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Basic Analytics</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Community Support</li>
+                    </ul>
+                    <a href="#" class="btn-outline btn-block">Get Started</a>
+                </div>
+
+                <div class="pricing-card pricing-card-featured reveal reveal-delay-1">
+                    <div class="pricing-badge">Most Popular</div>
+                    <div class="pricing-header">
+                        <h4>Growth</h4>
+                        <p class="pricing-desc">For growing businesses</p>
+                        <div class="pricing-amount">
+                            <span class="price-currency">$</span>
+                            <span class="price-value" data-monthly="149" data-annual="119">149</span>
+                            <span class="price-period">/month</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>3 Cloud Servers (4 vCPU, 8GB RAM)</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>25 Email Accounts</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>250GB Storage</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>5 Domains with SSL</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Full Analytics & Monitoring</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Global CDN</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Priority Support</li>
+                    </ul>
+                    <a href="#" class="btn-primary btn-block">Get Started</a>
+                </div>
+
+                <div class="pricing-card reveal reveal-delay-2">
+                    <div class="pricing-header">
+                        <h4>Scale</h4>
+                        <p class="pricing-desc">For teams and enterprises</p>
+                        <div class="pricing-amount">
+                            <span class="price-currency">$</span>
+                            <span class="price-value" data-monthly="399" data-annual="319">399</span>
+                            <span class="price-period">/month</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Unlimited Servers (Custom Specs)</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Unlimited Email Accounts</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>1TB Storage</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Unlimited Domains with SSL</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Advanced Analytics & API Access</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Global CDN + DDoS Protection</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Dedicated Account Manager</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Custom Integrations</li>
+                    </ul>
+                    <a href="#" class="btn-outline btn-block">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Preview -->
+    <section class="section dashboard-preview" id="dashboard">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Dashboard</span>
+                <h2>Everything at a glance.</h2>
+                <p class="section-sub">A clean, modern control centre for your entire digital infrastructure. No clutter. No confusion.</p>
+            </div>
+
+            <div class="dashboard-mock reveal">
+                <div class="dash-window">
+                    <div class="dash-titlebar">
+                        <div class="dash-dots">
+                            <span></span><span></span><span></span>
+                        </div>
+                        <div class="dash-title">Vestora Dashboard</div>
+                        <div class="dash-dots-spacer"></div>
+                    </div>
+                    <div class="dash-body">
+                        <div class="dash-sidebar">
+                            <div class="dash-sidebar-logo">
+                                <svg viewBox="0 0 32 32" width="24" height="24" fill="none"><rect width="32" height="32" rx="6" fill="#4a6cf7"/><path d="M10 10L16 22L22 10" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </div>
+                            <div class="dash-nav-items">
+                                <div class="dash-nav-item active">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                                    Overview
+                                </div>
+                                <div class="dash-nav-item">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/></svg>
+                                    Servers
+                                </div>
+                                <div class="dash-nav-item">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                                    Email
+                                </div>
+                                <div class="dash-nav-item">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+                                    Storage
+                                </div>
+                                <div class="dash-nav-item">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/></svg>
+                                    Domains
+                                </div>
+                                <div class="dash-nav-item">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+                                    Analytics
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dash-main">
+                            <div class="dash-topbar">
+                                <h3>Overview</h3>
+                                <div class="dash-topbar-actions">
+                                    <div class="dash-search">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                                        Search...
+                                    </div>
+                                    <div class="dash-avatar"></div>
+                                </div>
+                            </div>
+                            <div class="dash-stats-row">
+                                <div class="dash-stat-card">
+                                    <div class="dash-stat-label">Servers Active</div>
+                                    <div class="dash-stat-value">3 <span class="dash-stat-status online">Online</span></div>
+                                </div>
+                                <div class="dash-stat-card">
+                                    <div class="dash-stat-label">Emails Sent (30d)</div>
+                                    <div class="dash-stat-value">12,847</div>
+                                </div>
+                                <div class="dash-stat-card">
+                                    <div class="dash-stat-label">Storage Used</div>
+                                    <div class="dash-stat-value">127 GB <span class="dash-stat-sub">/ 250 GB</span></div>
+                                </div>
+                                <div class="dash-stat-card">
+                                    <div class="dash-stat-label">Bandwidth (30d)</div>
+                                    <div class="dash-stat-value">2.4 TB</div>
+                                </div>
+                            </div>
+                            <div class="dash-content-row">
+                                <div class="dash-chart">
+                                    <div class="dash-chart-header">
+                                        <span>Traffic (7 days)</span>
+                                        <span class="dash-chart-legend">
+                                            <span class="legend-dot"></span> Requests
+                                        </span>
+                                    </div>
+                                    <div class="dash-chart-bars">
+                                        <div class="dash-bar" style="--height: 45%"><span>Mon</span></div>
+                                        <div class="dash-bar" style="--height: 72%"><span>Tue</span></div>
+                                        <div class="dash-bar" style="--height: 58%"><span>Wed</span></div>
+                                        <div class="dash-bar" style="--height: 85%"><span>Thu</span></div>
+                                        <div class="dash-bar" style="--height: 92%"><span>Fri</span></div>
+                                        <div class="dash-bar" style="--height: 67%"><span>Sat</span></div>
+                                        <div class="dash-bar" style="--height: 53%"><span>Sun</span></div>
+                                    </div>
+                                </div>
+                                <div class="dash-activity">
+                                    <div class="dash-activity-header">Recent Activity</div>
+                                    <div class="dash-activity-item">
+                                        <span class="activity-dot green"></span>
+                                        <span>Server us-east-1 deployed</span>
+                                        <span class="activity-time">2m ago</span>
+                                    </div>
+                                    <div class="dash-activity-item">
+                                        <span class="activity-dot blue"></span>
+                                        <span>SSL renewed — example.com</span>
+                                        <span class="activity-time">1h ago</span>
+                                    </div>
+                                    <div class="dash-activity-item">
+                                        <span class="activity-dot green"></span>
+                                        <span>Database backup completed</span>
+                                        <span class="activity-time">3h ago</span>
+                                    </div>
+                                    <div class="dash-activity-item">
+                                        <span class="activity-dot yellow"></span>
+                                        <span>CDN cache purged (global)</span>
+                                        <span class="activity-time">5h ago</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-section">
+        <div class="cta-bg">
+            <div class="cta-glow cta-glow-1"></div>
+            <div class="cta-glow cta-glow-2"></div>
+        </div>
+        <div class="container">
+            <div class="cta-content reveal">
+                <h2>Ready to simplify your infrastructure?</h2>
+                <p>Join forward-thinking businesses that run everything from one platform. Set up in minutes, not days.</p>
+                <div class="cta-actions">
+                    <a href="#pricing" class="btn-primary btn-lg">
+                        Get Started Today
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                    </a>
+                    <a href="#" class="btn-text btn-lg">Talk to Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="nav-logo">
+                        <div class="logo-icon">
+                            <svg viewBox="0 0 32 32" fill="none">
+                                <rect width="32" height="32" rx="8" fill="url(#footer-grad)"/>
+                                <path d="M10 10L16 22L22 10" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <defs><linearGradient id="footer-grad" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#4a6cf7"/><stop offset="1" stop-color="#7c5cf7"/></linearGradient></defs>
+                            </svg>
+                        </div>
+                        Vestora
+                    </a>
+                    <p class="footer-tagline">Your entire digital infrastructure. Simplified.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h5>Product</h5>
+                        <a href="#product">Features</a>
+                        <a href="#pricing">Pricing</a>
+                        <a href="#dashboard">Dashboard</a>
+                        <a href="#">Changelog</a>
+                    </div>
+                    <div class="footer-col">
+                        <h5>Company</h5>
+                        <a href="#">About</a>
+                        <a href="#">Blog</a>
+                        <a href="#">Careers</a>
+                        <a href="#">Contact</a>
+                    </div>
+                    <div class="footer-col">
+                        <h5>Resources</h5>
+                        <a href="#">Documentation</a>
+                        <a href="#">API Reference</a>
+                        <a href="#">Status Page</a>
+                        <a href="#">Community</a>
+                    </div>
+                    <div class="footer-col">
+                        <h5>Legal</h5>
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Cookie Policy</a>
+                        <a href="#">SLA</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Vestora. All rights reserved.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Twitter">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    </a>
+                    <a href="#" aria-label="GitHub">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                    </a>
+                    <a href="#" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

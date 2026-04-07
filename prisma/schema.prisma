@@ -1,0 +1,161 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(uuid())
+  name      String
+  email     String   @unique
+  password  String
+  plan      String   @default("starter")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  stripeCustomerId     String? @unique
+  stripeSubscriptionId String?
+  stripePriceId        String?
+
+  servers   Server[]
+  emails    EmailAccount[]
+  files     StorageFile[]
+  domains   Domain[]
+  databases Database[]
+  invoices  Invoice[]
+}
+
+model Server {
+  id        String   @id @default(uuid())
+  name      String
+  region    String
+  status    String   @default("provisioning")
+  type      String   @default("standard")
+  cpu       Int      @default(2)
+  ram       Int      @default(4)
+  storage   Int      @default(50)
+  ip        String?
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  hetznerServerId String?
+  providerStatus  String?
+  errorMessage    String?
+}
+
+model EmailAccount {
+  id          String   @id @default(uuid())
+  address     String
+  domain      String
+  status      String   @default("active")
+  storageUsed Int      @default(0)
+  forwardTo   String?
+  userId      String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  cloudflareRuleId String?
+}
+
+model StorageFile {
+  id        String   @id @default(uuid())
+  name      String
+  type      String
+  size      Int
+  path      String
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+
+  r2Key String?
+  r2Url String?
+}
+
+model Domain {
+  id          String      @id @default(uuid())
+  name        String
+  status      String      @default("pending")
+  ssl         Boolean     @default(true)
+  sslExpiry   DateTime?
+  nameservers String      @default("ns1.vestora.io,ns2.vestora.io")
+  userId      String
+  user        User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  dnsRecords  DnsRecord[]
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+
+  cloudflareZoneId   String?
+  cloudflareStatus   String?
+}
+
+model DnsRecord {
+  id       String @id @default(uuid())
+  type     String
+  name     String
+  value    String
+  ttl      Int    @default(3600)
+  domainId String
+  domain   Domain @relation(fields: [domainId], references: [id], onDelete: Cascade)
+
+  cloudflareRecordId String?
+}
+
+model Database {
+  id        String   @id @default(uuid())
+  name      String
+  type      String   @default("postgresql")
+  region    String
+  size      Int      @default(0)
+  maxSize   Int      @default(10240)
+  status    String   @default("provisioning")
+  host      String?
+  port      Int
+  dbName    String
+  username  String
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  hetznerServerId  String?
+  providerStatus   String?
+  errorMessage     String?
+  connectionString String?
+  dbPassword       String?
+}
+
+model Invoice {
+  id        String   @id @default(uuid())
+  amount    Float
+  status    String   @default("paid")
+  period    String
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+
+  stripeInvoiceId  String? @unique
+  stripePaymentUrl String?
+}
+
+model ActivityLog {
+  id        String   @id @default(uuid())
+  action    String
+  resource  String
+  details   String?
+  userId    String
+  createdAt DateTime @default(now())
+}
+
+model Metric {
+  id        String   @id @default(uuid())
+  type      String
+  value     Float
+  timestamp DateTime @default(now())
+  userId    String
+}

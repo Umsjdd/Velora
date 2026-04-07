@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background: #05050a;
+    color: #eeeef0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  * {
+    border-color: rgba(255, 255, 255, 0.06);
+  }
+
+  input, textarea, select {
+    background: transparent;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: #4a4a5e;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Selection */
+::selection {
+  background: rgba(74, 108, 247, 0.3);
+  color: #eeeef0;
+}
+
+/* Focus outline */
+@layer utilities {
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-[#4a6cf7]/40 focus:ring-offset-0;
+  }
+
+  .card {
+    @apply bg-[#0c0c18] border border-white/[0.06] rounded-xl;
+  }
+
+  .card-hover {
+    @apply bg-[#0c0c18] border border-white/[0.06] rounded-xl transition-colors hover:border-white/[0.12] hover:bg-[#10102a];
+  }
+}
