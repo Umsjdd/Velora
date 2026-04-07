@@ -16,7 +16,7 @@ import {
 import { useAuth } from '../context/AuthContext'
 
 const navItems = [
-  { to: '/', label: 'Overview', icon: LayoutDashboard },
+  { to: '/dashboard', label: 'Overview', icon: LayoutDashboard },
   { to: '/servers', label: 'Servers', icon: Server },
   { to: '/email', label: 'Email', icon: Mail },
   { to: '/storage', label: 'Storage', icon: HardDrive },
@@ -98,7 +98,7 @@ export default function Sidebar({ isOpen, onClose }) {
               <NavLink
                 key={to}
                 to={to}
-                end={to === '/'}
+                end={to === '/dashboard'}
                 onClick={onClose}
                 className={({ isActive }) =>
                   `flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${

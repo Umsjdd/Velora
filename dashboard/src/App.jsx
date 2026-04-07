@@ -1,6 +1,7 @@
 import { Routes, Route, Navigate } from 'react-router-dom'
 import { useAuth } from './context/AuthContext'
 import Layout from './components/Layout'
+import Landing from './pages/Landing'
 import Login from './pages/Login'
 import Register from './pages/Register'
 import Overview from './pages/Overview'
@@ -27,7 +28,7 @@ function PublicRoute({ children }) {
   const { user, loading } = useAuth()
 
   if (loading) return null
-  if (user) return <Navigate to="/" replace />
+  if (user) return <Navigate to="/dashboard" replace />
 
   return children
 }
@@ -53,7 +54,17 @@ export default function App() {
 
   return (
     <Routes>
-      {/* Public routes */}
+      {/* Landing page — visible to everyone, redirects logged-in users to dashboard */}
+      <Route
+        path="/"
+        element={
+          <PublicRoute>
+            <Landing />
+          </PublicRoute>
+        }
+      />
+
+      {/* Auth routes */}
       <Route
         path="/login"
         element={
@@ -71,7 +82,7 @@ export default function App() {
         }
       />
 
-      {/* Protected routes */}
+      {/* Protected dashboard routes */}
       <Route
         element={
           <ProtectedRoute>
@@ -79,16 +90,16 @@ export default function App() {
           </ProtectedRoute>
         }
       >
-        <Route index element={<Overview />} />
-        <Route path="servers" element={<Servers />} />
-        <Route path="email" element={<Email />} />
-        <Route path="storage" element={<Storage />} />
-        <Route path="domains" element={<Domains />} />
-        <Route path="databases" element={<Databases />} />
-        <Route path="analytics" element={<Analytics />} />
-        <Route path="monitoring" element={<Monitoring />} />
-        <Route path="billing" element={<Billing />} />
-        <Route path="settings" element={<Settings />} />
+        <Route path="/dashboard" element={<Overview />} />
+        <Route path="/servers" element={<Servers />} />
+        <Route path="/email" element={<Email />} />
+        <Route path="/storage" element={<Storage />} />
+        <Route path="/domains" element={<Domains />} />
+        <Route path="/databases" element={<Databases />} />
+        <Route path="/analytics" element={<Analytics />} />
+        <Route path="/monitoring" element={<Monitoring />} />
+        <Route path="/billing" element={<Billing />} />
+        <Route path="/settings" element={<Settings />} />
       </Route>
 
       {/* Catch-all */}
