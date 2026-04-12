@@ -2,8 +2,8 @@ export default function StatsCard({ title, value, subtitle, icon: Icon, trend, c
   const isPositive = trend && !trend.startsWith('-')
   const isNegative = trend && trend.startsWith('-')
 
-  // Support icon as either a component reference or a rendered element
-  const isComponent = Icon && typeof Icon === 'function'
+  // Support icon as either a component reference (function or forwardRef) or a rendered element
+  const isComponent = Icon && (typeof Icon === 'function' || (typeof Icon === 'object' && Icon.$$typeof))
 
   return (
     <div
