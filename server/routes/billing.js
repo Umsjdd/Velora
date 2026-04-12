@@ -1,8 +1,8 @@
 import { Router } from 'express';
 import auth from '../middleware/auth.js';
-import { PLAN_LIMITS, STRIPE_PRICE_MAP } from '../config/plans.js';
+import { PLAN_LIMITS, MOLLIE_PLAN_AMOUNTS } from '../config/plans.js';
 import { isProviderConfigured } from '../providers/utils.js';
-import stripeProvider from '../providers/stripe.js';
+import mollieProvider from '../providers/mollie.js';
 
 const router = Router();
 router.use(auth);
@@ -89,7 +89,7 @@ router.get('/usage', async (req, res) => {
   }
 });
 
-// PUT /plan - Update plan (with Stripe checkout if configured)
+// PUT /plan - Update plan (with Mollie payment if configured)
 router.put('/plan', async (req, res) => {
   try {
     const { plan } = req.body;
@@ -101,25 +101,38 @@ router.put('/plan', async (req, res) => {
       });
     }
 
-    // If Stripe is configured, create a checkout session or update subscription
-    if (isProviderConfigured('stripe')) {
+    if (isProviderConfigured('mollie')) {
       const user = await req.prisma.user.findUnique({
         where: { id: req.user.id },
-        select: { stripeCustomerId: true, stripeSubscriptionId: true, plan: true },
+        select: { mollieCustomerId: true, mollieSubscriptionId: true, plan: true },
       });
 
-      const priceId = STRIPE_PRICE_MAP[plan];
-      if (!priceId) {
-        return res.status(400).json({ success: false, error: 'Stripe price not configured for this plan' });
+      const amount = MOLLIE_PLAN_AMOUNTS[plan];
+      if (!amount) {
+        return res.status(400).json({ success: false, error: 'Plan amount not configured' });
       }
 
-      // If user already has a subscription, update it
-      if (user.stripeSubscriptionId) {
-        const subscription = await stripeProvider.updateSubscription(user.stripeSubscriptionId, priceId);
+      // If user already has a subscription, cancel old and create new
+      if (user.mollieSubscriptionId && user.mollieCustomerId) {
+        try {
+          await mollieProvider.cancelSubscription(user.mollieCustomerId, user.mollieSubscriptionId);
+        } catch (e) {
+          // Subscription may already be cancelled
+        }
+
+        const origin = req.headers.origin || req.headers.referer || 'http://localhost:5173';
+        const webhookUrl = `${process.env.APP_URL || origin}/api/billing/webhook`;
+
+        const subscription = await mollieProvider.createSubscription(user.mollieCustomerId, {
+          amount,
+          description: `Vestora ${PLAN_LIMITS[plan].name} Plan`,
+          webhookUrl,
+          metadata: { plan, userId: req.user.id },
+        });
 
         await req.prisma.user.update({
           where: { id: req.user.id },
-          data: { plan, stripePriceId: priceId },
+          data: { plan, mollieSubscriptionId: subscription.id },
         });
 
         await req.prisma.activityLog.create({
@@ -133,34 +146,44 @@ router.put('/plan', async (req, res) => {
 
         return res.json({
           success: true,
-          data: {
-            plan: { currentPlan: plan, ...PLAN_LIMITS[plan] },
-          },
+          data: { plan: { currentPlan: plan, ...PLAN_LIMITS[plan] } },
         });
       }
 
-      // No subscription yet — create checkout session
-      if (!user.stripeCustomerId) {
-        return res.status(400).json({ success: false, error: 'No billing account. Please contact support.' });
+      // No subscription yet — create first payment to get a mandate
+      if (!user.mollieCustomerId) {
+        // Create Mollie customer first
+        const dbUser = await req.prisma.user.findUnique({
+          where: { id: req.user.id },
+          select: { email: true, name: true },
+        });
+        const customer = await mollieProvider.createCustomer(dbUser.email, dbUser.name);
+        await req.prisma.user.update({
+          where: { id: req.user.id },
+          data: { mollieCustomerId: customer.id },
+        });
+        user.mollieCustomerId = customer.id;
       }
 
       const origin = req.headers.origin || req.headers.referer || 'http://localhost:5173';
-      const session = await stripeProvider.createCheckoutSession(
-        user.stripeCustomerId,
-        priceId,
-        `${origin}/billing?success=true`,
-        `${origin}/billing?canceled=true`,
-      );
+      const webhookUrl = `${process.env.APP_URL || origin}/api/billing/webhook`;
+
+      const payment = await mollieProvider.createPayment({
+        customerId: user.mollieCustomerId,
+        amount,
+        description: `Vestora ${PLAN_LIMITS[plan].name} Plan - First Payment`,
+        redirectUrl: `${origin}/billing?success=true`,
+        webhookUrl,
+        metadata: { plan, userId: req.user.id },
+      });
 
       return res.json({
         success: true,
-        data: {
-          checkoutUrl: session.url,
-        },
+        data: { checkoutUrl: payment.getCheckoutUrl() },
       });
     }
 
-    // Fallback: no Stripe, just update the plan directly
+    // Fallback: no Mollie, just update the plan directly
     const user = await req.prisma.user.update({
       where: { id: req.user.id },
       data: { plan },
@@ -186,32 +209,6 @@ router.put('/plan', async (req, res) => {
   } catch (error) {
     console.error('Update plan error:', error);
     res.status(500).json({ success: false, error: 'Failed to update plan' });
-  }
-});
-
-// POST /portal - Create Stripe customer portal session
-router.post('/portal', async (req, res) => {
-  try {
-    if (!isProviderConfigured('stripe')) {
-      return res.status(400).json({ success: false, error: 'Billing not configured' });
-    }
-
-    const user = await req.prisma.user.findUnique({
-      where: { id: req.user.id },
-      select: { stripeCustomerId: true },
-    });
-
-    if (!user.stripeCustomerId) {
-      return res.status(400).json({ success: false, error: 'No billing account found' });
-    }
-
-    const origin = req.headers.origin || req.headers.referer || 'http://localhost:5173';
-    const session = await stripeProvider.createPortalSession(user.stripeCustomerId, `${origin}/billing`);
-
-    res.json({ success: true, data: { url: session.url } });
-  } catch (error) {
-    console.error('Portal session error:', error);
-    res.status(500).json({ success: false, error: 'Failed to create portal session' });
   }
 });
 

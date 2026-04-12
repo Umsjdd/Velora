@@ -3,7 +3,7 @@ import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import auth from '../middleware/auth.js';
 import { isProviderConfigured } from '../providers/utils.js';
-import stripeProvider from '../providers/stripe.js';
+import mollieProvider from '../providers/mollie.js';
 
 const router = Router();
 
@@ -35,16 +35,16 @@ router.post('/register', async (req, res) => {
       data: { name, email, password: hashedPassword },
     });
 
-    // Create Stripe customer if configured
-    if (isProviderConfigured('stripe')) {
+    // Create Mollie customer if configured
+    if (isProviderConfigured('mollie')) {
       try {
-        const customer = await stripeProvider.createCustomer(email, name);
+        const customer = await mollieProvider.createCustomer(email, name);
         await req.prisma.user.update({
           where: { id: user.id },
-          data: { stripeCustomerId: customer.id },
+          data: { mollieCustomerId: customer.id },
         });
-      } catch (stripeErr) {
-        console.error('Stripe customer creation failed:', stripeErr);
+      } catch (mollieErr) {
+        console.error('Mollie customer creation failed:', mollieErr);
       }
     }
 

@@ -28,8 +28,8 @@ export const PLAN_LIMITS = {
   },
 };
 
-export const STRIPE_PRICE_MAP = {
-  starter: process.env.STRIPE_PRICE_STARTER,
-  growth: process.env.STRIPE_PRICE_GROWTH,
-  scale: process.env.STRIPE_PRICE_SCALE,
+export const MOLLIE_PLAN_AMOUNTS = {
+  starter: '9.00',
+  growth: '29.00',
+  scale: '79.00',
 };

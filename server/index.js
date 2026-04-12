@@ -22,7 +22,7 @@ import databaseRoutes from './routes/databases.js';
 import analyticsRoutes from './routes/analytics.js';
 import monitoringRoutes from './routes/monitoring.js';
 import billingRoutes from './routes/billing.js';
-import { handleStripeWebhook } from './routes/webhooks.js';
+import { handleMollieWebhook } from './routes/webhooks.js';
 import { startHealthChecker } from './services/healthChecker.js';
 import { isProviderConfigured } from './providers/utils.js';
 
@@ -33,11 +33,11 @@ const app = express();
 const prisma = new PrismaClient();
 const PORT = process.env.PORT || 3001;
 
-// Stripe webhook needs raw body — must be before express.json()
-app.post('/api/billing/webhook', express.raw({ type: 'application/json' }), (req, res, next) => {
+// Mollie webhook
+app.post('/api/billing/webhook', express.urlencoded({ extended: true }), (req, res, next) => {
   req.prisma = prisma;
   next();
-}, handleStripeWebhook);
+}, handleMollieWebhook);
 
 // Middleware
 app.use(cors({ origin: '*' }));

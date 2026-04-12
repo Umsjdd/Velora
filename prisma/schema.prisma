@@ -16,9 +16,8 @@ model User {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  stripeCustomerId     String? @unique
-  stripeSubscriptionId String?
-  stripePriceId        String?
+  mollieCustomerId     String? @unique
+  mollieSubscriptionId String?
 
   servers   Server[]
   emails    EmailAccount[]
@@ -139,8 +138,7 @@ model Invoice {
   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
   createdAt DateTime @default(now())
 
-  stripeInvoiceId  String? @unique
-  stripePaymentUrl String?
+  molliePaymentId String? @unique
 }
 
 model ActivityLog {
